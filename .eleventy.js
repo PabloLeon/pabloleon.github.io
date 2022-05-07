@@ -1,5 +1,8 @@
 const fs = require("fs");
 const htmlmin = require("html-minifier");
+
+const pluginSEO = require("eleventy-plugin-seo");
+
 const { DateTime } = require("luxon");
 
 module.exports = function (eleventyConfig) {
@@ -14,6 +17,7 @@ module.exports = function (eleventyConfig) {
   // Passthrough
   eleventyConfig.addPassthroughCopy({ "src/static": "." });
 
+  eleventyConfig.addPlugin(pluginSEO, require("./src/_data/seo.json"));
   // Watch targets
   eleventyConfig.addWatchTarget("./src/styles/");
 
