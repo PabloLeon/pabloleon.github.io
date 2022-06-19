@@ -5,6 +5,45 @@ const pluginSEO = require("eleventy-plugin-seo");
 
 const { DateTime } = require("luxon");
 
+const Cite = require("citation-js");
+const Autolinker = require("autolinker");
+
+const parseCitations = async (content) => {
+  let bibtexCounter = 1;
+
+  // Parse bibtex string
+  let input = await Cite.inputAsync(content);
+  // Citation.js required unique IDs, so make sure they're unique.
+  // I've always used "src" as ID, showing my BibTex incompetence.
+  //input.map((e) => (e.id = bibtexCounter++));
+
+  // Put in Cite object and get HTML out of it!
+  const data = new Cite(input);
+  input = input.sort((entryA, entryB) => {
+    return (
+      parseInt(entryA["issued"]["date-parts"][0][0]) -
+      parseInt(entryB["issued"]["date-parts"][0][0])
+    );
+  });
+  console.log(input);
+  const html = data.format("bibliography", {
+    format: "html",
+    template: "apa",
+    lang: "en-US",
+    nosort: true,
+  });
+
+  // Convert all links in the output HTML to actual <a> tags
+  return Autolinker.link(html, {
+    newWindow: true,
+    email: false,
+    phone: false,
+    stripPrefix: false,
+    stripTrailingSlash: false,
+    className: "no-underline",
+  });
+};
+
 module.exports = function (eleventyConfig) {
   if (process.env.ELEVENTY_PRODUCTION) {
     eleventyConfig.addTransform("htmlmin", htmlminTransform);
@@ -16,6 +55,7 @@ module.exports = function (eleventyConfig) {
 
   // Passthrough
   eleventyConfig.addPassthroughCopy({ "src/static": "." });
+  eleventyConfig.addDataExtension("bib", (c) => parseCitations(c));
 
   eleventyConfig.addPlugin(pluginSEO, require("./src/_data/seo.json"));
   // Watch targets

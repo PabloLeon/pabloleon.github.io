@@ -25,6 +25,8 @@
     "tailwindcss": "^3.0.24"
   },
   "dependencies": {
+    "autolinker": "^3.15.0",
+    "citation-js": "^0.5.7",
     "eleventy-plugin-seo": "^0.5.2"
   }
 }
