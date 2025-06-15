@@ -11,7 +11,7 @@ export const personalInfo: PersonalInfo = {
     linkedin: "https://www.linkedin.com/in/pablo-leon-villagra/",
     google_scholar: "https://scholar.google.com/citations?user=sEzxpMcAAAAJ",
     // github: "", // placeholder if needed
-    bluesky: "https://bsky.app/profile/your-handle.bsky.social", // Update with your actual Bluesky handle
+    bluesky: "https://bsky.app/profile/pleonv.bsky.social", // Update with your actual Bluesky handle
     email: "mailto:pablo_leon_villagra@brown.edu",
   },
   research_areas: [
