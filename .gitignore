@@ -26,9 +26,6 @@ vite.config.ts.timestamp-*
 .vscode/
 .cursor/
 
-# GitHub workflows (we don't want to deploy these)
-.github/workflows/
-
 # Specstory
 .specstory/
 
