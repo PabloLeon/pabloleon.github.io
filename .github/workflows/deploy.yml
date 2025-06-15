@@ -44,6 +44,7 @@ jobs:
       - name: Build
         env:
           BASE_PATH: ''
+          PUBLIC_GA_MEASUREMENT_ID: 'G-VRBK2BQWQF'
         run: npm run build
 
       - name: Upload Artifacts
