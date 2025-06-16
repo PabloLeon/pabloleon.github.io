@@ -27,10 +27,6 @@
 			</p>
 
 			<p>
-				I am interested in how children, adults, and machines learn to represent the world around them. To explore this question, I run experimental studies and write computational models.
-			</p>
-
-			<p>
 				I am currently at <a href="https://vivo.brown.edu/display/dbuchsba" class="link-content">Daphna Buchsbaum</a>'s <a href="http://www.cocodevlab.com/" class="link-content">CoCoDevLab</a>, where we are working on new experimental methods to uncover children's developing categories.
 			</p>
 

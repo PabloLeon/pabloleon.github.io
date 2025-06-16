@@ -37,7 +37,7 @@
 
 			<div class="space-text">
 				<p>
-					I am interested in how children, adults, and machines learn to represent the world around them. To explore this question, I run experimental studies and write computational models.
+					To explore this question, I run experimental studies and write computational models.
 				</p>
 				<div class="pt-4">
 					<Button
