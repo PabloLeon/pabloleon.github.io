@@ -1,0 +1,30 @@
+name: Spell Check
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+    paths:
+      - '**/*.md'
+
+jobs:
+  spell-check:
+    name: Spell Check Markdown Files
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        
+      - name: Spell Check
+        uses: streetsidesoftware/cspell-action@v6
+        with:
+          # Check all markdown files
+          files: "**/*.md"
+          # Fail the action if spelling errors are found
+          strict: true
+          # Show progress during spell checking
+          verbose: true
+          # Use default configuration, but you can specify a custom config file
+          # config: ".cspell.json" 
