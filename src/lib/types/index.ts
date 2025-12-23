@@ -149,4 +149,139 @@ export interface TableOfContentsItem {
   title: string;
   level: number;
   children?: TableOfContentsItem[];
-} 
+}
+
+// Experiment Types - MCMC Utility Estimation
+export interface Lottery {
+  p20: number; // Probability of £20
+  p10: number; // Probability of £10
+  p0: number;  // Probability of £0
+}
+
+export interface ChainState {
+  id: number;
+  current: Lottery;
+}
+
+export type Choice = 'current' | 'proposal';
+
+export interface AgentLog {
+  chainId: number;
+  current: Lottery;
+  proposal: Lottery;
+  uCurrent: number;
+  uProposal: number;
+  accepted: boolean;
+  timestamp: number;
+}
+
+export interface ParticipantLog {
+  chainId: number;
+  current: Lottery;
+  proposal: Lottery;
+  choice: Choice;
+  responseTimeMs: number;
+  timestamp: number;
+}
+
+export interface ExperimentSession {
+  sessionId: string;
+  chains: ChainState[];
+  currentIndex: number;
+  startTime: number;
+  trialCount: number;
+  agentLogs: AgentLog[];
+  participantLogs: ParticipantLog[];
+}
+
+export type ExperimentScreen = 'instructions' | 'trial' | 'debrief';
+
+export interface ExperimentInfo {
+  slug: string;
+  title: string;
+  description: string;
+  status: 'active' | 'coming-soon' | 'completed';
+  tags: string[];
+}
+
+// Experiment Configuration Types
+export interface DimensionRange {
+  name: string;
+  min: number;
+  max: number;
+  wrapped?: boolean; // For circular dimensions like Hue
+}
+
+export interface ColorDomainConfig {
+  type: 'color';
+  dimensions: 3;
+  ranges: [
+    DimensionRange & { name: 'Hue'; min: 0; max: 360; wrapped: true },
+    DimensionRange & { name: 'Saturation'; min: 0; max: 100 },
+    DimensionRange & { name: 'Lightness'; min: 0; max: 100 }
+  ];
+}
+
+export interface ChordDomainConfig {
+  type: 'chord';
+  dimensions: 2;
+  ranges: [
+    DimensionRange & { name: 'Interval 1'; min: 0.5; max: 11.5 },
+    DimensionRange & { name: 'Interval 2'; min: 0.5; max: 11.5 }
+  ];
+  rootFrequency: number; // e.g., 220 Hz
+}
+
+export type GSPDomainConfig = ColorDomainConfig | ChordDomainConfig;
+
+export interface GSPConfig {
+  domain: 'color' | 'chord';
+  dimensions: number;
+  m: number; // Samples per dimension
+  targetIterations?: number; // Optional target iterations
+  initialVector?: number[]; // Optional starting point
+  domainConfig: GSPDomainConfig;
+}
+
+export interface MCMCConfig {
+  targetTrials: number;
+}
+
+export interface ExperimentConfig {
+  // Metadata
+  slug: string;
+  title: string;
+  description: string;
+  status: 'active' | 'coming-soon' | 'completed';
+  tags: string[];
+
+  // Experiment type
+  type: 'mcmc-utility' | 'gsp';
+
+  // GSP-specific specs (when type === 'gsp')
+  gsp?: GSPConfig;
+
+  // MCMC-specific specs (when type === 'mcmc-utility')
+  mcmc?: MCMCConfig;
+}
+
+// GSP Experiment Types
+export interface GSPSampleLog {
+  dimensionIndex: number;
+  iteration: number;
+  sampleValue: number;
+  timestamp: number;
+  vector?: number[]; // Full vector state at the time of this sample (optional for backward compatibility)
+}
+
+export interface GSPSession {
+  sessionId: string;
+  experimentSlug: string;
+  vector: number[];
+  dimensionIndex: number;
+  iteration: number;
+  sampleCount: number;
+  startTime: number;
+  sampleLogs: GSPSampleLog[];
+  completedIterations: number;
+}

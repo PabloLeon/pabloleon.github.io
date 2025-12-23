@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Calendar, FileText, ExternalLink, ChevronDown, ChevronUp } from 'lucide-svelte';
+	import { FileText, ExternalLink, ChevronDown, ChevronUp } from 'lucide-svelte';
 	import Button from '$lib/components/Button.svelte';
 	import type { Publication } from '$lib/types';
 
@@ -7,7 +7,6 @@
 	
 	const sortedPublications = $derived(publications.sort((a, b) => b.year - a.year));
 	
-	// Track expanded state for each publication abstract
 	let expandedAbstracts = $state(new Set<number>());
 	
 	function toggleAbstract(index: number) {
@@ -16,7 +15,6 @@
 		} else {
 			expandedAbstracts.add(index);
 		}
-		// Trigger reactivity
 		expandedAbstracts = new Set(expandedAbstracts);
 	}
 </script>
@@ -34,9 +32,7 @@
 					<div class="grid-about">
 						<div class="lg:col-span-2 prose prose-slate max-w-none">
 							<h3 class="publication-title !mb-2">{pub.title}</h3>
-
 							<p class="publication-authors !mt-0 !mb-2">{pub.authors.join(', ')}</p>
-
 							<p class="publication-venue !mt-0 !mb-4">
 								{#if pub.type === 'Ph.D. Thesis'}
 									<em>Ph.D. Thesis, {pub.school}</em>
@@ -111,9 +107,8 @@
 		position: relative;
 		transition: all 0.3s ease;
 	}
-	
 	.publication-abstract-wrapper.collapsed {
-		max-height: 4.5rem; /* Approximately 3-4 lines */
+		max-height: 4.5rem;
 		overflow: hidden;
 		mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
 		-webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);

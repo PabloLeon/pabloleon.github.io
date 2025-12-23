@@ -51,21 +51,11 @@
 </script>
 
 <div class="page-container">
-	<!-- Main Content -->
 	<main class="main-content">
-		<!-- Hero Section -->
 		<HeroSection {scrollToSection} />
-
-		<!-- About Section -->
 		<AboutSection />
-
-		<!-- Projects Section -->
 		<ProjectsSection {projects} />
-
-		<!-- Writing Section
-		<WritingSection {writings} /> -->
-
-		<!-- Publications Section -->
+		<WritingSection {writings} />
 		<PublicationsSection {publications} />
 	</main>
 </div>

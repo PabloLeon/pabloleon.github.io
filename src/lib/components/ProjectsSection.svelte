@@ -1,15 +1,8 @@
 <script lang="ts">
-	import { Calendar, FileText, ExternalLink, Github } from 'lucide-svelte';
+	import { FileText, ExternalLink, Github } from 'lucide-svelte';
 	import Button from '$lib/components/Button.svelte';
 	import type { ProjectData } from '$lib/types';
-
 	let { projects }: { projects: ProjectData[] } = $props();
-	
-	// Calculate project stats for the sidebar
-	const totalProjects = $derived(projects.length);
-	const activeProjects = $derived(projects.filter(p => p.status === 'Active').length);
-	const allTags = $derived([...new Set(projects.flatMap(p => p.tags || []))]);
-	const latestProject = $derived(projects.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())[0]);
 </script>
 
 <section id="projects" class="section-container-alt">

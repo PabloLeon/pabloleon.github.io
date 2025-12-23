@@ -29,6 +29,11 @@ vite.config.ts.timestamp-*
 # Specstory
 .specstory/
 
+# Playwright
+/test-results/
+/playwright-report/
+/playwright/.cache/
+
 .cursor/
 
 
