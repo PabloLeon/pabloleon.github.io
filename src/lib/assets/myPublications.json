@@ -112,7 +112,7 @@
         "id": "leon2013categorization",
         "type": "inproceedings",
         "title": "Categorization and abstract similarity in chess",
-        "author": "León-Villagrá, Pablo and Jakel, Frank",
+        "author": "León-Villagrá, Pablo and Jäkel, Frank",
         "booktitle": "Proceedings of the Annual Meeting of the Cognitive Science Society",
         "volume": "35",
         "number": "35",
@@ -250,5 +250,41 @@
         "year": "2024",
         "url": "https://escholarship.org/uc/item/66t4x0fb",
         "abstract": "People often display essentialist biases, which can lead them to underestimate within-species variability. This bias is especially pronounced when traits are described as advantageous for survival. However, it is unclear whether this bias is limited to the specified trait or encompasses complex trait interactions. We used Markov Chain Monte Carlo with People (MCMCp) to analyze people's representations of biological variability, using ladybeetles as a model species. Participants either received contextual information about the benefits of ladybeetle color for survival, or survival-irrelevant information. Overall, participants held consistent beliefs about ladybeetle features, but those with survival-relevant context produced lighter and larger ladybeetles; this difference was consistent with survey responses. However, we found no significant interaction between MCMCp variability and essentialism scores, given our context manipulation. We discuss potential explanations for these results and highlight advantages of MCMCp for assessing biological variability, particularly when studying the development of essentialist biases."
+    },
+    {
+        "id": "castillo2026random",
+        "type": "article",
+        "title": "Random generation is what comes to mind in naturalistic settings",
+        "author": "Castillo, Lucas and León-Villagrá, Pablo and Falbén, Johanna K and Chater, Nick and Sanborn, Adam N",
+        "journal": "Cognition",
+        "volume": "274",
+        "pages": "106554",
+        "year": "2026",
+        "publisher": "Elsevier",
+        "abstract": "Being unpredictable is useful for creativity, exploration, and good decision-making. Decades of research asking people to generate random sequences of numbers have concluded that people systematically deviate from randomness, but individuals do so in very idiosyncratic ways. However, there is no consensus on the cause of these rich individual differences: most theories postulate that people achieve this by spending cognitive resources monitoring their own output and changing the way they say items accordingly, whereas a Local Sampling account postulates that people tap into a general-purpose ability to produce samples, which they would use to make judgments and choices, and which are inherently somewhat unpredictable. Here we distinguish between these possibilities by asking people to generate sequences both at random and as they come to mind. We employ several measures tapping into different ways sequences could deviate from randomness. We find that, consistent with the Local Sampling explanation, people deviate from randomness in virtually identical ways in both sequences, with high individual differences pointing to a common cognitive process. We follow up these findings by computationally modeling human performance using several Local Sampling models. We find many participants had the same model as best-fitting in both sequences; with estimated parameters correlating strongly across tasks showing individual differences in how dependent on previous items sampling is. Overall, we conclude that random generation is better understood as employing a general-purpose faculty, Local Sampling, which is stable across time and tasks, with differences in the sampler’s features resulting in differences in random generation performance.",
+        "url": "https://www.sciencedirect.com/science/article/pii/S0010027726001216"
+    },
+    {
+        "id": "gelpi2026introduction",
+        "type": "article",
+        "title": "An introduction to rational constructivism in cognitive development",
+        "author": "Gelpi, Rebekah A and León-Villagrá, Pablo and Buchsbaum, Daphna and Denison, Stephanie",
+        "journal": "Topics in Cognitive Science",
+        "pages": "e70067",
+        "year": "2026",
+        "publisher": "Wiley",
+        "abstract": "Rational constructivism is a contemporary theory of cognitive development. It proposes that children generate, tweak, and radically revise theories, beliefs, and representations by integrating evidence with existing knowledge via probabilistic inferential learning mechanisms. We begin with a general overview of the theory of rational constructivism, covering its theoretical commitments and predictions. We then describe how it accounts for the empirically observed patterns of both incremental and radical developmental change and discuss the cognitive mechanisms underlying those conceptual changes. Finally, we sketch out a general computational framework for it and address open questions and directions for future research.",
+        "url": "https://onlinelibrary.wiley.com/doi/10.1111/tops.70067"
+    },
+    {
+        "id": "gelpi2025resource",
+        "type": "inproceedings",
+        "title": "Resource-rational belief revision can mitigate as well as amplify polarization",
+        "author": "Gelpi, Rebekah and León-Villagrá, Pablo and Cunningham, William A and Lucas, Christopher G and Buchsbaum, Daphna",
+        "booktitle": "Proceedings of the Annual Meeting of the Cognitive Science Society",
+        "volume": "47",
+        "year": "2025",
+        "abstract": "People's beliefs sometimes diverge after observing the same information, which has been interpreted as evidence of irrationality. This behaviour has been proposed to result from people's limited cognitive resources and motivated reasoning, but how belief revision differs across these explanations has not been formalized or compared to a rational norm. Further, while people may be biased relative to a normative ideal, they may still make optimal choices given their limited cognitive resources, or rationally balance the utility of holding accurate beliefs with the belief's intrinsic utility. Across two studies, we develop and test a unified computational account of belief polarization under these proposed mechanisms, showing that people's performance on a belief updating task best fits a limited-resource Bayesian model; external motivations may contribute to divergence (or convergence) by determining what pre-existing information people consider relevant to a situation, rather than by changing how people evaluate new information in isolation.",
+        "url": "https://escholarship.org/uc/item/6xc153mb"
     }
 ]
