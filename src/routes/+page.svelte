@@ -55,7 +55,7 @@
 		<HeroSection {scrollToSection} />
 		<AboutSection />
 		<ProjectsSection {projects} />
-		<WritingSection {writings} />
+		<!-- <WritingSection {writings} /> -->
 		<PublicationsSection {publications} />
 	</main>
 </div>
